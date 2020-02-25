@@ -1,0 +1,742 @@
+<apex:page renderAs="pdf" applyHtmlTag="false" showHeader="false" showChat="false" standardStylesheets="false">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <apex:stylesheet value="{!URLFOR($Resource.VehicleReportCardCSS)}" />
+        </head>
+        <body>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <!-- HEADER -->
+                <tr>
+                    <!-- COLUMN 1 -->
+                    <td class="w_50 v_top" style="padding-right:6px;">
+                        
+                        <h1>Vehicle Report Card</h1>
+                        <!-- INFO -->
+                        <div id="info" class="section">
+                            <table class="tbl_grid b_r_0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th colspan="2" class="th_heading">
+                                     Multi-Point Inspection As Recommended By Ford Motor Company
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="td_field w_50 b_b_0 b_l_0"><label>Date:</label></td>
+                                    <td class="td_field w_50 b_b_0 b_l_0"><label>RO/Tag #:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="td_field b_b_0 b_l_0"><label>Name:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="td_field b_b_0 b_l_0"><label>Email:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="td_field b_b_0 b_l_0"><label>Year/Make/Model:</label></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_field b_b_0 b_l_0"><label>VIN #:</label></td>
+                                    <td class="td_field b_b_0 b_l_0"><label>Plate #:</label></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_field b_b_0 b_l_0"><label>Odometer:</label></td>
+                                    <td class="td_field b_b_0 b_l_0"><label>Inspect. Month:</label></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_field b_b_0 b_l_0"><label>Rewards #:</label></td>
+                                    <td class="td_field b_b_0 b_l_0"><label>Service Balance</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="td_field b_b_0 b_l_0"><label>Extended Service Plan:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="td_field b_b_0 b_l_0"><label>SYNC VHR Activation:</label></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <!-- Scheduled Maintenance -->
+                        <div id="scheduled_maintenance" class="section">
+                            <h2 class="section_heading m_0">
+                                Scheduled Maintenance Items*
+                            </h2>
+                            <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th>Due</th>
+                                    <th>Serviced</th>
+                                    <th>Due</th>
+                                    <th>Serviced</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox"></div>
+                                        The Works
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                    <td>Engine Air Filter</td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_indented">
+                                        <div class="checkbox"></div>
+                                        Oil Change &amp; Filter
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                    <td>Engine Coolant</td>
+                                    <td class="td_checked"><div class="checkbox"></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_indented">
+                                        <div class="checkbox"></div>
+                                        Tire Rotation
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                    <td>Trans Fluid</td>
+                                    <td class="td_checked"><div class="checkbox"></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_indented">
+                                        <div class="checkbox"></div>
+                                        Multi-Point Inspection
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                    <td>Cabin Air Filter</td>
+                                    <td class="td_checked"><div class="checkbox"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox"></div>
+                                        Fuel Filter
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                    <td>Spark Plugs</td>
+                                    <td class="td_checked"><div class="checkbox"></div></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="checkbox"></div>
+                                        K Scheduled Maintenance
+                                    </td>
+                                    <td class="td_checked"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="td_disclaimer b_b_0">
+                                        *This is only a partial list of vehicle maintenance items 
+                                        and is NOT all-inclusive. Please consult your Owner's 
+                                        Manual or visit LincolnOwner.com for vehicle-specific 
+                                        maintenance requirements.
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <!-- Fluid Levels -->
+                        <div id="fluid_levels" class="section">
+                            <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th class="th_heading" colspan="3">Fuel Levels</th>
+                                    <th>Serviced</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="v_middle"><div class="swatch swatch_1"></div> <div class="swatch swatch_3"></div> Oil and/or fluid leaks
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <table class="tbl_noborder" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <th>OK</th>
+                                                <th>Fill</th>
+                                                <th></th>
+                                                <th>OK</th>
+                                                <th>Fill</th>
+                                                <th></th>
+                                                <th>OK</th>
+                                                <th>Fill</th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_checked"><div class="checkbox"></div></td>
+                                                <td class="td_checked"><div class="checkbox"></div></td>
+                                                <td class="p_l_4">Engine Oil</td>
+                                                <td class="td_checked"><div class="checkbox"></div></td>
+                                                <td class="td_checked"><div class="checkbox"></div></td>
+                                                <td class="p_l_4">Power Steering</td>
+                                                <td class="td_checked"><div class="checkbox"></div></td>
+                                                <td class="td_checked"><div class="checkbox"></div></td>
+                                                <td class="p_l_4">Transmission</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_checked b_b_0"><div class="checkbox"></div></td>
+                                                <td class="td_checked b_b_0"><div class="checkbox"></div></td>
+                                                <td class="p_l_4 b_b_0">Brake Reservoir</td>
+                                                <td class="td_checked b_b_0"><div class="checkbox"></div></td>
+                                                <td class="td_checked b_b_0"><div class="checkbox"></div></td>
+                                                <td class="p_l_4 b_b_0">Window Washer</td>
+                                                <td class="td_checked b_b_0"><div class="checkbox"></div></td>
+                                                <td class="td_checked b_b_0"><div class="checkbox"></div></td>
+                                                <td class="p_l_4 b_b_0">Coolant</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- Wiper Blades -->
+                        <div id="wiper_blades" class="section">
+                            <table class="tbl_section tbl_grid b_t_0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th class="th_heading" colspan="3">Wiper Blades</th>
+                                    <th>Serviced</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="b_b_0">
+                                        <div class="checkbox"></div> Wiper Test Performed
+                                    </td>
+                                    <td colspan="1" class="v_middle b_l_0 b_b_0"><div class="swatch swatch_1"></div> <div class="swatch swatch_3"></div> Wiper Blades
+                                    </td>
+                                    <td class="td_checked b_b_0">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- Battery -->
+                        <div id="wiper_blades" class="section">
+                            <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th class="th_heading" colspan="3">Battery</th>
+                                    <th>Serviced</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="b_b_0 bold">
+                                        State of Health
+                                    </td>
+                                    <td colspan="1" class="v_middle b_l_0 b_b_0 bold">Battery Condition
+                                    </td>
+                                    <td class="td_checked">
+                                        <div class="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="b_b_0 text_center" style="min-height: 10px;">[GRAPHIC]</td>
+                                    <td class="b_l_0 b_b_0 text_center"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div></td>
+                                    <td class="b_l_0 b_b_0"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="">Factory spec cold cranking amps: </td>
+                                    <td colspan="2" class="b_l_1">Actual cold cranking amps: </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <!-- COLUMN 2 -->
+                    <td class="w_50 v_top" style="padding-left:6px;">
+                        <table>
+                            <tr>
+                                <!-- LOGO -->
+                                <td class="w_50 v_top p_r_10">
+                                    <div class="logo">
+                                        [LOGO]
+                                    </div></td>
+                                <!-- LEGEND -->
+                                <td class="w_50 v_top">
+                                    <h4 class="m_0">
+                                        Legend
+                                    </h4>
+                                    <table class="tbl_legend">
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_1"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                Checked and OK at this time
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_2"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                May require future attention
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_3"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                Requires immediate attention
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Exterior Body -->
+                        <div id="exterior_body" class="section">
+                            <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th class="th_heading" colspan="4">Exterior Body</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text_center" style="width: 60%; min-height: 98px;">
+                                        [GRAPHIC]
+                                    </td>
+                                    <td class="b_l_0">
+                                        Note any existing exterior body damage or defects on diagram.
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- Systems / Components -->
+                        <div id="systems_components" class="section">
+                            <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                                <tr colspan="4">
+                                    <th class="th_heading">Systems / Components</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th class="th_heading inverse" colspan="3">Lights / Windshield</th>
+                                <th>Serviced</th>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1"></div><div class="swatch swatch_empty"></div><div class="swatch swatch_3"></div>
+                                </td>
+                                <td colspan="2" class="b_l_0">
+                                    Operation of horn, interior lights, exterior lamps, turn signals, hazard and brake lamps
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1"></div><div class="swatch swatch_empty"></div><div class="swatch swatch_3"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Windshield for cracks, chips and pitting
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="th_heading inverse" colspan="3">Belts / Hoses / Mounts</th>
+                                <th>Serviced</th>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    HVAC system and hoses / lines for leaks and/or damage
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Engine Cooling Sstem, radiator, hoses and clamps
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_0">
+                                    Accessory drive belt(s)
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="th_heading inverse" colspan="3">Brake System</th>
+                                <th>Serviced</th>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Brake system (including lines, hoes, and parking break)
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="th_heading inverse" colspan="3">Steering / Suspension</th>
+                                <th>Serviced</th>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Shocks / struts and other suspension components for leaks and/or damage
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Steering, sterring linkages and ball joints (visual)
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="th_heading inverse" colspan="3">Exhaust System</th>
+                                <th>Serviced</th>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Exhaust system and heat shields (leaks, damage, loose parts)
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="th_heading inverse" colspan="3">Transmission / Drive Axle</th>
+                                <th>Serviced</th>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Clutch operation (if equipped)
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1">
+                                    Constant velocity (CV) drive axle boots (if equipped)
+                                </td>
+                                <td class="td_checked">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_swatch b_b_1"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                </td>
+                                <td colspan="2" class="b_l_1 b_b_1">
+                                    Drive shaft, transmission, u-joint and shift linkage (if equipped) and lubricate (as needed)
+                                </td>
+                                <td class="td_checked b_l_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-top:10px;">
+                        <!-- Tire / Break Wear -->
+                        <div id="fluid_levels" class="section">
+                            <table class="tbl_section tbl_grid b_r_0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th class="th_heading" colspan="4">Tire / Brake Wear</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="p_0 b_b_0">
+                                        <table class="tbl_grid" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <th class="th_heading swatch_0 text_left w_10">Tire Tread</th>
+                                                <th class="th_heading swatch_1 text_0 w_30">7/32" and greater</th>
+                                                <th class="th_heading swatch_2 text_0 w_30">4/32" to 6/32"</th>
+                                                <th class="th_heading swatch_3 text_0 w_30">3/32" and less</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_heading swatch_0 text_left p_0 b_b_0">Break Lining</th>
+                                                <td class="swatch_1 text_0 text_center text_small p_0 b_b_0">Over 5mm or 7/32" (Disc) or Over 2mm or 3/22" (Drum)</td>
+                                                <td class="swatch_2 text_0 text_center text_small p_0 b_b_0">3-5mm or 4/32"-7/32" (Disc) or 1.01-2mm (Drum) or 2/32"-3/22"</td>
+                                                <td class="swatch_3 text_0 text_center text_small p_0 b_b_0">Less than 3mm or 4/32" (Disc) or 1mm or 2/32" or less (Drum)</td>
+                                            </tr>
+                                        </table>
+                                        <table class="tbl_grid" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td class="w_30 p_0 v_top b_l_0">
+                                                    <table cellpadding="0" cellspacing="0" class="b_r_0">
+                                                        <tr>
+                                                            <th class="th_heading inverse b_l_0">Tire Wear Indicates</th>
+                                                            <th class="td_checked">Serviced</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="b_l_0">
+                                                                <div class="checkbox"></div>
+                                                                Alignment check needed
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="b_l_0">
+                                                                <div class="checkbox"></div>
+                                                                Wheel balance needed
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="b_l_0">
+                                                                <div class="checkbox"></div>
+                                                                Brake measurements not taken this service visit
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th class="th_heading inverse b_l_0">Other Services</th>
+                                                            <th class="td_checked">Serviced</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2" class="b_l_0 b_r_0">
+                                                                <div class="checkbox"></div>
+                                                                Complimentary car wash
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2" class="b_b_0 b_l_0">Comments:</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td class="w_35 p_0 v_top b_l_0 b_r_0">
+                                                    <table class="tbl_grid b_t_0 b_r_0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th colspan="2" class="th_heading">Left Front</th>
+                                                            <th class="td_checked">Serviced</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Tred Depth ___/32"
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Wear Pattern / Damage
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Pressure set to factory-recommended PSI
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Break Lining ___mm    ___/32"
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2" class="th_heading inverse">Left Rear</th>
+                                                            <th class="td_checked">Serviced</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Tred Depth ___/32"
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Wear Pattern / Damage
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Pressure set to factory-recommended PSI
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch b_b_0"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_b_0 b_l_0">
+                                                                Break Lining ___mm    ___/32"
+                                                            </td>
+                                                            <td class="td_checked b_b_0">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td class="w_35 p_0 v_top b_l_0">
+                                                    <table class="" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th class="th_heading inverse" colspan="2">Right Front</th>
+                                                            <th class="td_checked">Serviced</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Tred Depth ___/32"
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Wear Pattern / Damage
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Pressure set to factory-recommended PSI
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Break Lining ___mm    ___/32"
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2" class="th_heading inverse">Right Rear</th>
+                                                            <th class="td_checked">Serviced</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Tred Depth ___/32"
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Wear Pattern / Damage
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0">
+                                                                Tire Pressure set to factory-recommended PSI
+                                                            </td>
+                                                            <td class="td_checked">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_swatch b_b_0"><div class="swatch swatch_1 b_r_0"></div><div class="swatch swatch_2"></div><div class="swatch swatch_3 b_l_0"></div>
+                                                            </td>
+                                                            <td class="b_l_0" style="border-bottom:1px solid #fff;">
+                                                                Break Lining ___mm    ___/32"
+                                                            </td>
+                                                            <td class="td_checked b_b_1" style="border-bottom:1px solid #fff;">
+                                                                <div class="checkbox"></div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table><br /><br />
+                            <table class="tbl_noborder">
+                                <tr>
+                                    <td class="w_33">
+                                        Advisor:
+                                    </td>
+                                    <td class="w_33">Technician:</td>
+                                    <td class="w_33">Customer Signature</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </body>
+    </html>
+</apex:page>
