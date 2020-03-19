@@ -1,0 +1,1021 @@
+<apex:page renderAs="pdf" applyHtmlTag="false" showHeader="false" showChat="false" standardStylesheets="false">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <apex:stylesheet value="{!URLFOR($Resource.VehicleReportCard2CSS)}" />
+        </head>
+        <body>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <!-- HEADER -->
+                <tr>
+                    <!-- COLUMN 1 -->
+                    <td class="w_45 v_top" style="padding-right:6px;">
+                        
+                        <h1 class="m_b_15">Vehicle Report Card</h1>
+                        <!-- LOGO -->
+                        <div class="logo">
+                            [LOGO]
+                        </div>
+                    </td>
+                    <!-- COLUMN 2 -->
+                    <td class="w_65 v_top" style="padding-left:6px;">
+                        <table>
+                            <tr>
+                                <td colspan="2" class="p_0">
+                                    <!-- INFO -->
+                                    <div id="info" class="section">
+                                        <table class="tbl_grid b_r_0 b_t_0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td colspan="2" class="td_field w_50 b_b_0 b_l_0"><label>Customer Name:</label></td>
+                                                <td class="td_field w_50 b_b_0 b_l_0"><label>Date:</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" class="td_field b_b_0 b_l_0"><label>Year/Make/Model:</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_field b_b_0 b_l_0"><label>Mileage:</label></td>
+                                                <td class="td_field b_b_0 b_l_0"><label>R.O. #:</label></td>
+                                                <td class="td_field b_b_0 b_l_0"><label>Plate #:</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="td_field b_b_0 b_l_0"><label>Model #:</label></td>
+                                                <td class="td_field b_b_0 b_l_0"><label>Serial #:</label></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h4 class="m_0 m_t_15">Legend</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- LEGEND -->
+                                <td class="w_50 v_top p_r_10">
+                                    <table class="tbl_legend">
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_1"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                No immediate problem found
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_3"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                Requires immediate attention
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td class="w_50 v_top">
+                                    <table class="tbl_legend">
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_2"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                Will require further attention
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="swatch swatch_4"></div>
+                                            </td>
+                                            <td class="desc v_middle">
+                                                Not applicable
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- Checklist -->
+            <table style="margin-top:4px;">
+                <tr>
+                    <td class="w_50" style="padding-right:15px;">
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="w_50" style="padding-left:15px;">
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- Test -->
+                        <table class="tbl_section tbl_grid" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="5" class="th_heading">Test Heading</th>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_checked swatch_1">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_2">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_3">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_checked swatch_4">
+                                    <div class="checkbox"></div>
+                                </td>
+                                <td class="td_desc">
+                                    Run lift through 2 lift cycles, verify proper operation
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+    </html>
+</apex:page>

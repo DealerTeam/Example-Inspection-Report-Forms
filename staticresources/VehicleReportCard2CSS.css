@@ -1,0 +1,215 @@
+@page {
+    margin:10px;
+}
+body {
+    color: #444;
+    font-family: sans-serif;
+    font-size: 12px;
+    max-width: 900px;
+}
+h1 {
+    font-size: 24px;
+    color: #444;
+    margin: 0px;
+}
+h2 {
+    font-size: 9px;
+}
+h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+table {
+    width: 100%;
+    border: 0;
+}
+.swatch_0 {
+    background: black!important;
+}
+.swatch_1 {
+    background: #21bf70!important;
+} 
+.swatch_2 {
+    background: #e6c86c!important;
+} 
+.swatch_3 {
+    background: #e66c6c!important;
+}
+.swatch_4 {
+    background: #03a1fc;
+}
+.swatch_empty {
+    background: none;
+    border: none!important;
+}
+.w_20 {
+    width: 20%;
+}
+.w_30 {
+    width: 30%;
+}
+.w_33{
+    width: 33.33%;
+}
+.w_34 {
+    width: 35%;
+}
+.w_45 {
+    width: 41%;
+}
+.w_50 {
+    width: 50%;
+}
+.w_65 {
+    width: 69%;
+}
+.w_70 {
+    width: 70%;
+}
+.v_top {
+    vertical-align: top!important;
+}
+.v_middle {
+    vertical-align: middle;
+}
+.m_0 {
+    margin: 0;
+}
+.m_t_15 {
+    margin-top: 8px;
+}
+.m_b_15 {
+    margin-bottom: 15px;
+}
+.p_0 {
+    padding: 0!important;
+}
+.p_l_10 {
+    padding-left: 10px;
+}
+.p_r_10 {
+    padding-right: 10px;
+}
+.p_l_4 {
+    padding-left: 4px!important;
+}
+.b_0 {
+    border: none!important;
+}
+.b_r_0 {
+    border-right: none!important;
+}
+.b_l_0 {
+    border-left: none!important;
+}
+.b_t_0 {
+    border-top: none!important;
+}
+.b_b_0 {
+    border-bottom: none!important;
+}
+.b_l_1 {
+    border-left:1px solid #fff!important;
+}
+.b_b_1 {
+    border-bottom:1px solid #fff;
+}
+.bold {
+    font-weight:bold;
+}
+.text_left {
+    text-align: left!important;
+}
+.text_center {
+    text-align: center;
+}
+.text_small{
+    font-size:9px;
+}
+.text_0{
+    color: black!important;
+}
+/*---------- LEGEND ----------*/
+.swatch {
+    border: 1px solid black;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+}
+.tbl_legend td {
+    padding: 2px 4px;
+}
+.swatch_middle {
+    border-left:1px solid #e6c86c!important;
+    border-right:1px solid #e6c86c!important;
+}
+/*---------- CHECKBOX ----------*/
+.checkbox {background:#fff; border: 1px solid black; display:inline-block; height: 14px; width: 8px;}
+.checkbox.checked {background: black;}
+/*---------- NO BORDER ----------*/
+.tbl_grid th .tbl_noborder {border: none;}
+.tbl_grid td .tbl_noborder td, .tbl_grid td .tbl_noborder th {border: none; padding: 0;}
+.tbl_grid td .tbl_noborder .td_checked {
+    width: 10px!important;
+    text-align: center;
+}
+.tbl_grid td .tbl_noborder th.th_heading {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 3px 0;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+/*---------- GRID ----------*/
+.tbl_grid {border-right: 1px solid black; border-top: 1px solid black; font-size:13px;}
+.tbl_grid th {font-weight:bold;}
+.tbl_grid th.th_heading {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 14px;
+}
+.tbl_grid th.th_heading.inverse {
+    background: #999;
+}
+.tbl_grid th, .tbl_grid td {border-left: 1px solid black; border-bottom: 1px solid black; padding: 4px;}
+.tbl_grid td {vertical-align:middle;}
+.tbl_grid td.td_indented {padding-left: 20px;}
+.tbl_grid td.td_disclaimer {font-size: 8px;}
+.tbl_grid td.td_swatch {width: 36px; padding-right:0;}
+.tbl_grid td.td_desc {font-size:12px; text-align:center;}
+/*---------- SECTION ----------*/
+.tbl_section .td_heading {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 6px 0;
+}
+.tbl_section .td_field {
+    padding: 2px 0;
+}
+.tbl_section .td_field label {
+    font-weight: bold;
+}
+.tbl_section .td_checked {
+    width: 10px;
+    text-align: center;
+    border: 0;
+    border-bottom:1px solid black;
+}
+.section_heading {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 6px 0;
+}
+/*---------- TEMP STYLES ----------*/
+.logo {
+    background: #ccc;
+    display: block;
+    height: 100px;
+    padding-top: 20px;
+    text-align: center;
+}
